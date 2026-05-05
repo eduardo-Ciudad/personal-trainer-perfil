@@ -318,6 +318,49 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
+.hero-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay escuro suave */
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* 🔥 HOVER */
+.hero-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card:hover img {
+  transform: scale(1.1);
+}
+
+.hero-card:hover .hero-photo::after {
+  opacity: 1;
+}
+
 .hero-blob {
     position: absolute;
     border-radius: 50%;
